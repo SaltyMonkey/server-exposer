@@ -1,0 +1,14 @@
+{
+    "disableAutoUpdate": false,
+    "name": "server-exposer",
+	"author": "SaltyMonkey",
+	"description": "Placing server name near guild name in dungeons/everywhere based on settings.",
+	"options": {
+		"niceName": "ServerExposer",
+		"settingsVersion": 1,
+        "settingsFile": "./settings.json",
+        "settingsMigrator": "./migration.js"
+	},
+    "servers": ["https://raw.githubusercontent.com/SaltyMonkey/NoMoreAnnoyingTitles/master/"],
+    "supportUrl": "https://github.com/SaltyMonkey/NoMoreAnnoyingTitles/issues"
+}
