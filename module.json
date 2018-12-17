@@ -9,6 +9,6 @@
         "settingsFile": "./settings.json",
         "settingsMigrator": "./migration.js"
 	},
-    "servers": ["https://raw.githubusercontent.com/SaltyMonkey/NoMoreAnnoyingTitles/master/"],
-    "supportUrl": "https://github.com/SaltyMonkey/NoMoreAnnoyingTitles/issues"
+    "servers": ["https://raw.githubusercontent.com/SaltyMonkey/server-exposer/master/"],
+    "supportUrl": "https://github.com/SaltyMonkey/server-exposer/issues"
 }
