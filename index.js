@@ -1,8 +1,7 @@
 module.exports = function ServerExposer(mod) {
-	let regionsData = require("./regions.json");
-	let region = regionsData[mod.region];
-	let currentZone = -1;
-	
+	// Is identical to this:
+	mod.game.initialize("me");
+
 	mod.command.add("se", {
 		$default() {
 			mod.settings.enabled = !mod.settings.enabled;
@@ -14,13 +13,8 @@ module.exports = function ServerExposer(mod) {
 		}
 	});	
 
-	mod.hook("S_LOAD_TOPO", 3, (event) => { currentZone = event.zone; });
-
-	mod.hook("S_SPAWN_USER", 13, (event) => {
-		if(!mod.settings.enabled || (currentZone <= 8999 && !mod.settings.showEverywhere)  || !region) return;
-		if (region[event.serverId]) {
-			event.guild = `${event.guild} : ${region[event.serverId]}`
-			return true;
-		}
+	mod.hook("S_SPAWN_USER", 15, (event) => {
+		if (!mod.settings.enabled || (!mod.game.me.inDungeon && !mod.settings.showEverywhere)) return;
+		event.guild = `${event.guild} : ${mod.serverList[event.serverId].name}`
 	});
 }
