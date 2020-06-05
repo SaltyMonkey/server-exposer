@@ -12,8 +12,8 @@ module.exports = function ServerExposer(mod) {
 
 	mod.hook("S_SPAWN_USER", 15, (event) => {
 		if (mod.settings.enabled && (mod.game.me.inDungeon || mod.settings.showEverywhere)) {
-			event.guild += ` : ${mod.serverList[event.serverId].name}`
+			event.guildName += ` : ${mod.serverList[event.serverId].name}`;
 			return true;
 		}
 	});
-}
+};
