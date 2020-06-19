@@ -4,7 +4,8 @@
 	"author": "SaltyMonkey",
 	"description": "Placing server name near guild name in dungeons/everywhere based on settings.",
 	"options": {
-		"niceName": "ServerExposer",
+		"cliName": "Exposer",
+		"guiName": "ServerExposer",
 		"settingsVersion": 1,
         "settingsFile": "./settings.json",
         "settingsMigrator": "./migration.js"
