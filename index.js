@@ -16,7 +16,7 @@ module.exports = function ServerExposer(mod) {
 		return (guildName ? (`${guildName} : ${mod.serverList[serverId].name}`) : `${mod.serverList[serverId].name}`);
 	};
 
-	mod.hook("S_SPAWN_USER", mod.majorPatchVersion >= 99 ? 16 : 15, { "order": Infinity, "filter": { "fake": null } }, (event) => {
+	mod.hook("S_SPAWN_USER", mod.majorPatchVersion >= 101 ? 17 : 16, { "order": Infinity, "filter": { "fake": null } }, (event) => {
 		const serverId = event.serverId;
 		userMap.set(event.gameId, serverId);
 
